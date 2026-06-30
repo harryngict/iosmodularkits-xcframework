@@ -1,1 +1,1 @@
-// Auto-generated stub — TripPathMapKitImpWrapper re-exports TripPathMapKitImpBinary + external dependencies
+// Auto-generated stub — TripPathMapKitImpWrapper re-exports TripPathMapKitImpBinary + all dependencies

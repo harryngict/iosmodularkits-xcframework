@@ -1,1 +1,1 @@
-// Auto-generated stub — PersistentStoreKitImpWrapper re-exports PersistentStoreKitImpBinary + external dependencies
+// Auto-generated stub — PersistentStoreKitImpWrapper re-exports PersistentStoreKitImpBinary + all dependencies

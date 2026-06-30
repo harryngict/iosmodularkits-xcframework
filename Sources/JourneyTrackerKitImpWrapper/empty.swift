@@ -1,1 +1,1 @@
-// Auto-generated stub — JourneyTrackerKitImpWrapper re-exports JourneyTrackerKitImpBinary + external dependencies
+// Auto-generated stub — JourneyTrackerKitImpWrapper re-exports JourneyTrackerKitImpBinary + all dependencies

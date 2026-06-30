@@ -1,1 +1,1 @@
-// Auto-generated stub — InAppMessagingKitImpWrapper re-exports InAppMessagingKitImpBinary + external dependencies
+// Auto-generated stub — InAppMessagingKitImpWrapper re-exports InAppMessagingKitImpBinary + all dependencies

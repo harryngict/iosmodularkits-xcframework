@@ -1,1 +1,1 @@
-// Auto-generated stub — AnalyticsEventKitImpWrapper re-exports AnalyticsEventKitImpBinary + external dependencies
+// Auto-generated stub — AnalyticsEventKitImpWrapper re-exports AnalyticsEventKitImpBinary + all dependencies

@@ -4,169 +4,153 @@ import PackageDescription
 let package = Package(
   name: "iosmodularkits-xcframework",
   platforms: [.iOS(.v15)],
-  dependencies: [
-    .package(
-      url: "https://github.com/fullstorydev/fullstory-swift-package-ios.git",
-      exact: "1.67.0"
-    ),
-
-    .package(
-      url: "https://github.com/CleverTap/clevertap-ios-sdk.git",
-      exact: "7.3.3"
-    ),
-
-    .package(
-      url: "https://github.com/CleverTap/clevertap-geofence-ios.git",
-      exact: "1.0.7"
-    ),
-
-    .package(
-      url: "https://github.com/firebase/firebase-ios-sdk.git",
-      exact: "12.4.0"
-    ),
-
-    .package(
-      url: "https://github.com/GuanceCloud/datakit-ios.git",
-      exact: "1.5.18"
-    ),
-
-    .package(
-      url: "https://github.com/pubnub/swift.git",
-      exact: "9.3.4"
-    ),
-
-    .package(
-      url: "https://github.com/googlemaps/ios-consumer-sdk",
-      exact: "9.2.1"
-    ),
-
-    .package(
-      url: "https://github.com/realm/realm-swift.git",
-      exact: "20.0.4"
-    ),
-
-    .package(
-      url: "https://github.com/googlemaps/ios-maps-sdk",
-      exact: "9.4.0"
-    ),
-  ],
   products: [
     .library(name: "AnalyticsEventKit", targets: ["AnalyticsEventKit"]),
     .library(name: "AnalyticsEventKitImp", targets: ["AnalyticsEventKitImpBinary", "AnalyticsEventKitImpWrapper"]),
-    .library(name: "AnalyticsEventKitMock", targets: ["AnalyticsEventKitMock"]),
+    .library(name: "AnalyticsEventKitMock", targets: ["AnalyticsEventKitMockBinary", "AnalyticsEventKitMockWrapper"]),
     .library(name: "AssetLoaderKit", targets: ["AssetLoaderKit"]),
-    .library(name: "AssetLoaderKitImp", targets: ["AssetLoaderKitImp"]),
-    .library(name: "AssetLoaderKitMock", targets: ["AssetLoaderKitMock"]),
-    .library(name: "CheetahWebKit", targets: ["CheetahWebKit"]),
+    .library(name: "AssetLoaderKitImp", targets: ["AssetLoaderKitImpBinary", "AssetLoaderKitImpWrapper"]),
+    .library(name: "AssetLoaderKitMock", targets: ["AssetLoaderKitMockBinary", "AssetLoaderKitMockWrapper"]),
+    .library(name: "CheetahWebKit", targets: ["CheetahWebKitBinary", "CheetahWebKitWrapper"]),
     .library(name: "CleverTapBridgeKit", targets: ["CleverTapBridgeKit"]),
     .library(name: "CleverTapBridgeKitImp", targets: ["CleverTapBridgeKitImpBinary", "CleverTapBridgeKitImpWrapper"]),
-    .library(name: "CleverTapBridgeKitMock", targets: ["CleverTapBridgeKitMock"]),
+    .library(name: "CleverTapBridgeKitMock", targets: ["CleverTapBridgeKitMockBinary", "CleverTapBridgeKitMockWrapper"]),
     .library(name: "ComfortUIKit", targets: ["ComfortUIKit"]),
     .library(name: "CommonSharedKit", targets: ["CommonSharedKit"]),
-    .library(name: "CommonSharedKitMock", targets: ["CommonSharedKitMock"]),
+    .library(name: "CommonSharedKitMock", targets: ["CommonSharedKitMockBinary", "CommonSharedKitMockWrapper"]),
     .library(name: "ExperimentKit", targets: ["ExperimentKit"]),
     .library(name: "ExperimentKitImp", targets: ["ExperimentKitImpBinary", "ExperimentKitImpWrapper"]),
-    .library(name: "ExperimentKitMock", targets: ["ExperimentKitMock"]),
-    .library(name: "ExperimentMenuKit", targets: ["ExperimentMenuKit"]),
+    .library(name: "ExperimentKitMock", targets: ["ExperimentKitMockBinary", "ExperimentKitMockWrapper"]),
+    .library(name: "ExperimentMenuKit", targets: ["ExperimentMenuKitBinary", "ExperimentMenuKitWrapper"]),
     .library(name: "FlowTrackerKit", targets: ["FlowTrackerKit"]),
-    .library(name: "FlowTrackerKitImp", targets: ["FlowTrackerKitImp"]),
-    .library(name: "FlowTrackerKitMock", targets: ["FlowTrackerKitMock"]),
+    .library(name: "FlowTrackerKitImp", targets: ["FlowTrackerKitImpBinary", "FlowTrackerKitImpWrapper"]),
+    .library(name: "FlowTrackerKitMock", targets: ["FlowTrackerKitMockBinary", "FlowTrackerKitMockWrapper"]),
     .library(name: "FoxTrailKit", targets: ["FoxTrailKit"]),
-    .library(name: "FoxTrailKitMock", targets: ["FoxTrailKitMock"]),
-    .library(name: "GeoLocationKit", targets: ["GeoLocationKit"]),
-    .library(name: "GeoLocationKitImp", targets: ["GeoLocationKitImp"]),
-    .library(name: "GeoLocationKitMock", targets: ["GeoLocationKitMock"]),
+    .library(name: "FoxTrailKitMock", targets: ["FoxTrailKitMockBinary", "FoxTrailKitMockWrapper"]),
+    .library(name: "GeoLocationKit", targets: ["GeoLocationKitBinary", "GeoLocationKitWrapper"]),
+    .library(name: "GeoLocationKitImp", targets: ["GeoLocationKitImpBinary", "GeoLocationKitImpWrapper"]),
+    .library(name: "GeoLocationKitMock", targets: ["GeoLocationKitMockBinary", "GeoLocationKitMockWrapper"]),
     .library(name: "GlobalLangKit", targets: ["GlobalLangKit"]),
-    .library(name: "GlobalLangKitImp", targets: ["GlobalLangKitImp"]),
-    .library(name: "GlobalLangKitMock", targets: ["GlobalLangKitMock"]),
+    .library(name: "GlobalLangKitImp", targets: ["GlobalLangKitImpBinary", "GlobalLangKitImpWrapper"]),
+    .library(name: "GlobalLangKitMock", targets: ["GlobalLangKitMockBinary", "GlobalLangKitMockWrapper"]),
     .library(name: "GuanceBridgeServiceKit", targets: ["GuanceBridgeServiceKit"]),
     .library(name: "GuanceBridgeServiceKitImp", targets: ["GuanceBridgeServiceKitImpBinary", "GuanceBridgeServiceKitImpWrapper"]),
-    .library(name: "GuanceBridgeServiceKitMock", targets: ["GuanceBridgeServiceKitMock"]),
+    .library(name: "GuanceBridgeServiceKitMock", targets: ["GuanceBridgeServiceKitMockBinary", "GuanceBridgeServiceKitMockWrapper"]),
     .library(name: "InAppMessagingKit", targets: ["InAppMessagingKit"]),
     .library(name: "InAppMessagingKitImp", targets: ["InAppMessagingKitImpBinary", "InAppMessagingKitImpWrapper"]),
-    .library(name: "InAppMessagingKitMock", targets: ["InAppMessagingKitMock"]),
+    .library(name: "InAppMessagingKitMock", targets: ["InAppMessagingKitMockBinary", "InAppMessagingKitMockWrapper"]),
     .library(name: "JourneyTrackerKit", targets: ["JourneyTrackerKit"]),
     .library(name: "JourneyTrackerKitImp", targets: ["JourneyTrackerKitImpBinary", "JourneyTrackerKitImpWrapper"]),
-    .library(name: "JourneyTrackerKitMock", targets: ["JourneyTrackerKitMock"]),
+    .library(name: "JourneyTrackerKitMock", targets: ["JourneyTrackerKitMockBinary", "JourneyTrackerKitMockWrapper"]),
     .library(name: "LogTrackKit", targets: ["LogTrackKit"]),
-    .library(name: "LogTrackKitImp", targets: ["LogTrackKitImp"]),
-    .library(name: "LogTrackKitMock", targets: ["LogTrackKitMock"]),
+    .library(name: "LogTrackKitImp", targets: ["LogTrackKitImpBinary", "LogTrackKitImpWrapper"]),
+    .library(name: "LogTrackKitMock", targets: ["LogTrackKitMockBinary", "LogTrackKitMockWrapper"]),
     .library(name: "PersistentStoreKit", targets: ["PersistentStoreKit"]),
     .library(name: "PersistentStoreKitImp", targets: ["PersistentStoreKitImpBinary", "PersistentStoreKitImpWrapper"]),
-    .library(name: "PersistentStoreKitMock", targets: ["PersistentStoreKitMock"]),
+    .library(name: "PersistentStoreKitMock", targets: ["PersistentStoreKitMockBinary", "PersistentStoreKitMockWrapper"]),
     .library(name: "SecureKeychainKit", targets: ["SecureKeychainKit"]),
-    .library(name: "SecureKeychainKitImp", targets: ["SecureKeychainKitImp"]),
-    .library(name: "SecureKeychainKitMock", targets: ["SecureKeychainKitMock"]),
+    .library(name: "SecureKeychainKitImp", targets: ["SecureKeychainKitImpBinary", "SecureKeychainKitImpWrapper"]),
+    .library(name: "SecureKeychainKitMock", targets: ["SecureKeychainKitMockBinary", "SecureKeychainKitMockWrapper"]),
     .library(name: "StreamLogDataKit", targets: ["StreamLogDataKit"]),
     .library(name: "StreamLogDataKitImp", targets: ["StreamLogDataKitImpBinary", "StreamLogDataKitImpWrapper"]),
-    .library(name: "StreamLogDataKitMock", targets: ["StreamLogDataKitMock"]),
+    .library(name: "StreamLogDataKitMock", targets: ["StreamLogDataKitMockBinary", "StreamLogDataKitMockWrapper"]),
     .library(name: "TestDetectLeakKit", targets: ["TestDetectLeakKit"]),
     .library(name: "TripPathMapKit", targets: ["TripPathMapKit"]),
     .library(name: "TripPathMapKitImp", targets: ["TripPathMapKitImpBinary", "TripPathMapKitImpWrapper"]),
-    .library(name: "TripPathMapKitMock", targets: ["TripPathMapKitMock"]),
     .library(name: "UnifiedPrivacyKit", targets: ["UnifiedPrivacyKit"]),
-    .library(name: "UnifiedPrivacyKitImp", targets: ["UnifiedPrivacyKitImp"]),
-    .library(name: "UnifiedPrivacyKitMock", targets: ["UnifiedPrivacyKitMock"]),
-    .library(name: "ZigNetworkEyeKit", targets: ["ZigNetworkEyeKit"]),
+    .library(name: "UnifiedPrivacyKitImp", targets: ["UnifiedPrivacyKitImpBinary", "UnifiedPrivacyKitImpWrapper"]),
+    .library(name: "UnifiedPrivacyKitMock", targets: ["UnifiedPrivacyKitMockBinary", "UnifiedPrivacyKitMockWrapper"]),
+    .library(name: "ZigNetworkEyeKit", targets: ["ZigNetworkEyeKitBinary", "ZigNetworkEyeKitWrapper"]),
     .library(name: "ZigNetworkKit", targets: ["ZigNetworkKit"]),
-    .library(name: "ZigNetworkKitImp", targets: ["ZigNetworkKitImp"]),
-    .library(name: "ZigNetworkKitMock", targets: ["ZigNetworkKitMock"]),
+    .library(name: "ZigNetworkKitImp", targets: ["ZigNetworkKitImpBinary", "ZigNetworkKitImpWrapper"]),
+    .library(name: "ZigNetworkKitMock", targets: ["ZigNetworkKitMockBinary", "ZigNetworkKitMockWrapper"]),
     .library(name: "ApplePayEngineKit", targets: ["ApplePayEngineKit"]),
-    .library(name: "ApplePayEngineKitImp", targets: ["ApplePayEngineKitImp"]),
-    .library(name: "ApplePayEngineKitMock", targets: ["ApplePayEngineKitMock"]),
+    .library(name: "ApplePayEngineKitImp", targets: ["ApplePayEngineKitImpBinary", "ApplePayEngineKitImpWrapper"]),
+    .library(name: "ApplePayEngineKitMock", targets: ["ApplePayEngineKitMockBinary", "ApplePayEngineKitMockWrapper"]),
   ],
   targets: [
     .binaryTarget(
       name: "AnalyticsEventKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/AnalyticsEventKit-1.3.1.xcframework.zip",
-      checksum: "7b8394e773fca89e80fba32c504c7a58af0d9f97976e3a5e6bf26d78c3b47252"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/AnalyticsEventKit-1.3.2.xcframework.zip",
+      checksum: "f05aa58cc148e3b62f3842ef37527860a1bd803b446ed688ec871361a749e992"
     ),
     .binaryTarget(
       name: "AnalyticsEventKitImpBinary",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/AnalyticsEventKitImp-1.3.1.xcframework.zip",
-      checksum: "3526cf95f21c40f5f846fef0ef6a98d0dd0697e41196afb9eb9075dc7e311299"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/AnalyticsEventKitImp-1.3.2.xcframework.zip",
+      checksum: "01a5967c2e005d385f0f268036d91ccc952421d877f52ffe95b852a1b3a689ac"
     ),
     .target(
       name: "AnalyticsEventKitImpWrapper",
       dependencies: [
         "AnalyticsEventKitImpBinary",
         .product(name: "FullStory", package: "fullstory-swift-package-ios"),
+        "AnalyticsEventKit",
+        "CleverTapBridgeKit",
       ]
     ),
     .binaryTarget(
-      name: "AnalyticsEventKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/AnalyticsEventKitMock-1.3.1.xcframework.zip",
-      checksum: "fe89df7f9e9f0f02dde964668e562d28f5156bc151193646d6c11e0a850fb67a"
+      name: "AnalyticsEventKitMockBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/AnalyticsEventKitMock-1.3.2.xcframework.zip",
+      checksum: "faaf06b290c7b86fd29a6db0f3d800f69f513c9b84768a49924b23caa2beae4d"
+    ),
+    .target(
+      name: "AnalyticsEventKitMockWrapper",
+      dependencies: [
+        "AnalyticsEventKitMockBinary",
+        "AnalyticsEventKit",
+      ]
     ),
     .binaryTarget(
       name: "AssetLoaderKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/AssetLoaderKit-1.3.1.xcframework.zip",
-      checksum: "503a4a6cd0b4edf397164bf3114396136616a3f0adb8522972ae86a22fd99b76"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/AssetLoaderKit-1.3.2.xcframework.zip",
+      checksum: "9abe23813c130b72d089acf3295ffebd63a06d21fb19f64a357a5b14d57044d8"
     ),
     .binaryTarget(
-      name: "AssetLoaderKitImp",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/AssetLoaderKitImp-1.3.1.xcframework.zip",
-      checksum: "98e3defa4872be169e1c443c6afd0747766ad994c17c5610473b943f78209ded"
+      name: "AssetLoaderKitImpBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/AssetLoaderKitImp-1.3.2.xcframework.zip",
+      checksum: "f456116a279df26e51d6ba08d50edc62aa74add96c9805d356d4e5b1fad27a18"
+    ),
+    .target(
+      name: "AssetLoaderKitImpWrapper",
+      dependencies: [
+        "AssetLoaderKitImpBinary",
+        "AssetLoaderKit",
+        "CommonSharedKit",
+      ]
     ),
     .binaryTarget(
-      name: "AssetLoaderKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/AssetLoaderKitMock-1.3.1.xcframework.zip",
-      checksum: "d8487571ac9796ee437a7035a056ee3f21936ac5fd5feee961deb39f8998fff8"
+      name: "AssetLoaderKitMockBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/AssetLoaderKitMock-1.3.2.xcframework.zip",
+      checksum: "b9dc654e00fe9eceec4e337e6e41a0e94cb512e1e6e05a28109e6d976d0d7977"
+    ),
+    .target(
+      name: "AssetLoaderKitMockWrapper",
+      dependencies: [
+        "AssetLoaderKitMockBinary",
+        "AssetLoaderKit",
+      ]
     ),
     .binaryTarget(
-      name: "CheetahWebKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/CheetahWebKit-1.3.1.xcframework.zip",
-      checksum: "565e6cb2c2ad1585332062eceb77bbf921ef50ed4ccca1953571a9531657a7d6"
+      name: "CheetahWebKitBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/CheetahWebKit-1.3.2.xcframework.zip",
+      checksum: "1663821143887e665e636f824d2b7f5f24b78cb3a0cfa99aee9c50364f328778"
+    ),
+    .target(
+      name: "CheetahWebKitWrapper",
+      dependencies: [
+        "CheetahWebKitBinary",
+        "ZigNetworkKit",
+      ]
     ),
     .binaryTarget(
       name: "CleverTapBridgeKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/CleverTapBridgeKit-1.3.1.xcframework.zip",
-      checksum: "123c112cc8bac78834ab6d7f54da0bc6639ad67abbbb3a8bee796e4470d8a339"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/CleverTapBridgeKit-1.3.2.xcframework.zip",
+      checksum: "1af7bb7e6ea9f61269ff5d967c8d89af462c1fe6c02a043bc331660afb276aa2"
     ),
     .binaryTarget(
       name: "CleverTapBridgeKitImpBinary",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/CleverTapBridgeKitImp-1.3.1.xcframework.zip",
-      checksum: "f7acc9d5614b3f00730f566a810efc18f0bca46060c5b278f81327ec6ca36b08"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/CleverTapBridgeKitImp-1.3.2.xcframework.zip",
+      checksum: "9d00cdb5cb11ba7d63660baec44e4104189e8d1333bf55f10e12cbbc3442b3c6"
     ),
     .target(
       name: "CleverTapBridgeKitImpWrapper",
@@ -175,326 +159,537 @@ let package = Package(
         .product(name: "CleverTapSDK", package: "clevertap-ios-sdk"),
         .product(name: "CleverTapLocation", package: "clevertap-ios-sdk"),
         .product(name: "CleverTapGeofence", package: "clevertap-geofence-ios"),
+        "CleverTapBridgeKit",
       ]
     ),
     .binaryTarget(
-      name: "CleverTapBridgeKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/CleverTapBridgeKitMock-1.3.1.xcframework.zip",
-      checksum: "5e1f4cf0ad9bde82ce6379a46648d4ed96bd8932bfad16372be2b16db9781246"
+      name: "CleverTapBridgeKitMockBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/CleverTapBridgeKitMock-1.3.2.xcframework.zip",
+      checksum: "59b7068b7738ac298965e2ede715ad9d8a1ec73608e25af4fc3e4433f2fce7ca"
+    ),
+    .target(
+      name: "CleverTapBridgeKitMockWrapper",
+      dependencies: [
+        "CleverTapBridgeKitMockBinary",
+        "CleverTapBridgeKit",
+      ]
     ),
     .binaryTarget(
       name: "ComfortUIKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/ComfortUIKit-1.3.1.xcframework.zip",
-      checksum: "d0ca2de1a08ce1ff303cb309a534706286c20b70d5083d910186f6add048388f"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/ComfortUIKit-1.3.2.xcframework.zip",
+      checksum: "e33faabfbb7b31b629b38ceb2da2f05c8ab2c494aae94d9babd31ec993236d9a"
     ),
     .binaryTarget(
       name: "CommonSharedKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/CommonSharedKit-1.3.1.xcframework.zip",
-      checksum: "67eda38afd31547116362e12a7dc998682c2dd5159c21f29727e624aa9736c4a"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/CommonSharedKit-1.3.2.xcframework.zip",
+      checksum: "b6e2f6922453ca2bc79abfb476bcf0fc625662375c5de9792814627e4d735c6b"
     ),
     .binaryTarget(
-      name: "CommonSharedKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/CommonSharedKitMock-1.3.1.xcframework.zip",
-      checksum: "dd7c1a0e39b4d630635399c2d9df7e16e0d14641953cf18437666fc18ea7c348"
+      name: "CommonSharedKitMockBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/CommonSharedKitMock-1.3.2.xcframework.zip",
+      checksum: "3ffd9e8021f95ad1f2555f7b645f13877062987b27febc2152c4e523dbab307a"
+    ),
+    .target(
+      name: "CommonSharedKitMockWrapper",
+      dependencies: [
+        "CommonSharedKitMockBinary",
+        "CommonSharedKit",
+      ]
     ),
     .binaryTarget(
       name: "ExperimentKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/ExperimentKit-1.3.1.xcframework.zip",
-      checksum: "02186bc012a83038b6ef67fa3f57740cba315615a7190c958d4faefd3327f90f"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/ExperimentKit-1.3.2.xcframework.zip",
+      checksum: "8ec19ac185fe314a67d0de4dba688040df613c230107c92c4421e36fa98fa790"
     ),
     .binaryTarget(
       name: "ExperimentKitImpBinary",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/ExperimentKitImp-1.3.1.xcframework.zip",
-      checksum: "d0615b9c64a5ea6eeb753cee713caaba88e8bf6368beef6dcdb59c7e1905bf8d"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/ExperimentKitImp-1.3.2.xcframework.zip",
+      checksum: "0e5348769b24caba3197ae7d34cfb30959c826cf077d50c8de8c832b05d00a2e"
     ),
     .target(
       name: "ExperimentKitImpWrapper",
       dependencies: [
         "ExperimentKitImpBinary",
         .product(name: "FirebaseRemoteConfig", package: "firebase-ios-sdk"),
+        "LogTrackKit",
+        "ExperimentKit",
+        "CommonSharedKit",
       ]
     ),
     .binaryTarget(
-      name: "ExperimentKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/ExperimentKitMock-1.3.1.xcframework.zip",
-      checksum: "ff86253963b549ab1a51409381692cbe0f6c4c9b3c295a90cd0e8b3378dcbac9"
+      name: "ExperimentKitMockBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/ExperimentKitMock-1.3.2.xcframework.zip",
+      checksum: "b1968016ce79a252d6bfcee69b5a6be772d4c8e84b9f62f34870f8ad341ec621"
+    ),
+    .target(
+      name: "ExperimentKitMockWrapper",
+      dependencies: [
+        "ExperimentKitMockBinary",
+        "ExperimentKit",
+      ]
     ),
     .binaryTarget(
-      name: "ExperimentMenuKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/ExperimentMenuKit-1.3.1.xcframework.zip",
-      checksum: "60e8ca805beb7e6ea0c8fa2ffd667f456a27de708bba465698f642f20f5a1faf"
+      name: "ExperimentMenuKitBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/ExperimentMenuKit-1.3.2.xcframework.zip",
+      checksum: "15c3631b5f93b114989aa6d05d610275f8f2f3069e8924778c3b4d3653cccf2a"
+    ),
+    .target(
+      name: "ExperimentMenuKitWrapper",
+      dependencies: [
+        "ExperimentMenuKitBinary",
+        "ExperimentKit",
+        "ExperimentKitImpBinary",
+        "ComfortUIKit",
+      ]
     ),
     .binaryTarget(
       name: "FlowTrackerKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/FlowTrackerKit-1.3.1.xcframework.zip",
-      checksum: "9f57aa1bd514a3217c0e53efebad4077361412448eb6e8db6631117c2739e9ef"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/FlowTrackerKit-1.3.2.xcframework.zip",
+      checksum: "06563b34058ec51b15c0f1d69869077c5e428aec47443bc05424b0508f18ba50"
     ),
     .binaryTarget(
-      name: "FlowTrackerKitImp",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/FlowTrackerKitImp-1.3.1.xcframework.zip",
-      checksum: "3b505585f72e357453b40e944751ff463965f8aa7883f759d30e78622cd881e6"
+      name: "FlowTrackerKitImpBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/FlowTrackerKitImp-1.3.2.xcframework.zip",
+      checksum: "06c0d69a09ddcc3abca2ab1855c8814b8d515aea0524e7e5bab85d6a5f7fdcc2"
+    ),
+    .target(
+      name: "FlowTrackerKitImpWrapper",
+      dependencies: [
+        "FlowTrackerKitImpBinary",
+        "FlowTrackerKit",
+        "CommonSharedKit",
+      ]
     ),
     .binaryTarget(
-      name: "FlowTrackerKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/FlowTrackerKitMock-1.3.1.xcframework.zip",
-      checksum: "d0b9996eafce45aa5c08f99cb16ce36bdb2355aecad3a7989fcdc26c4b384234"
+      name: "FlowTrackerKitMockBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/FlowTrackerKitMock-1.3.2.xcframework.zip",
+      checksum: "d2899eb09a2ec2ebd2cd4a5438d249b782d6ddb4c9c6d1e3308911eafe021d56"
+    ),
+    .target(
+      name: "FlowTrackerKitMockWrapper",
+      dependencies: [
+        "FlowTrackerKitMockBinary",
+        "FlowTrackerKit",
+      ]
     ),
     .binaryTarget(
       name: "FoxTrailKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/FoxTrailKit-1.3.1.xcframework.zip",
-      checksum: "1eb0d9d58cca2a29afa127d27e5493655ce6d3c8f861f377933ce142cc1c9221"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/FoxTrailKit-1.3.2.xcframework.zip",
+      checksum: "f4ae614a7ab6a3e8282faed8a83f2d28bd3e792a3bd7ab20c4f836da7b50e7db"
     ),
     .binaryTarget(
-      name: "FoxTrailKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/FoxTrailKitMock-1.3.1.xcframework.zip",
-      checksum: "d3c904add5afc8f7cd262f3b9bc78213ef89a2abb45ec672aa0c6d5e54e34a2f"
+      name: "FoxTrailKitMockBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/FoxTrailKitMock-1.3.2.xcframework.zip",
+      checksum: "530b9abee8661188615ff23ef70bd464028c0dcbd0892dea477203b261eb27d5"
+    ),
+    .target(
+      name: "FoxTrailKitMockWrapper",
+      dependencies: [
+        "FoxTrailKitMockBinary",
+        "FoxTrailKit",
+      ]
     ),
     .binaryTarget(
-      name: "GeoLocationKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/GeoLocationKit-1.3.1.xcframework.zip",
-      checksum: "bc1bfa6eeef5b97ac266ef9a3f605b341017e8e8b68d9a91bc7be09945092674"
+      name: "GeoLocationKitBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/GeoLocationKit-1.3.2.xcframework.zip",
+      checksum: "32545f51e93d312ec07239de0d91f9f842a00e402417de612ed9dbad0d52cc2f"
+    ),
+    .target(
+      name: "GeoLocationKitWrapper",
+      dependencies: [
+        "GeoLocationKitBinary",
+        "CommonSharedKit",
+      ]
     ),
     .binaryTarget(
-      name: "GeoLocationKitImp",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/GeoLocationKitImp-1.3.1.xcframework.zip",
-      checksum: "8e9464aa2a326b5b15ef2642aa22633d25ada9ad0c90479537d3d4948952b52b"
+      name: "GeoLocationKitImpBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/GeoLocationKitImp-1.3.2.xcframework.zip",
+      checksum: "686557258d99d809d55144cca40d811a4dc42963a7dbfa41fcde80513528f0e8"
+    ),
+    .target(
+      name: "GeoLocationKitImpWrapper",
+      dependencies: [
+        "GeoLocationKitImpBinary",
+        "GeoLocationKitBinary",
+        "CommonSharedKit",
+      ]
     ),
     .binaryTarget(
-      name: "GeoLocationKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/GeoLocationKitMock-1.3.1.xcframework.zip",
-      checksum: "168ab30bc5c2653439673cba867b58ae0f8e0b3ba6da69ca8f243b6dbd10374d"
+      name: "GeoLocationKitMockBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/GeoLocationKitMock-1.3.2.xcframework.zip",
+      checksum: "d4b7e56ca88e4ce2fe55e5336c987c820d8168820a4c487e4c05a23ac8cfcbc8"
+    ),
+    .target(
+      name: "GeoLocationKitMockWrapper",
+      dependencies: [
+        "GeoLocationKitMockBinary",
+        "GeoLocationKitBinary",
+      ]
     ),
     .binaryTarget(
       name: "GlobalLangKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/GlobalLangKit-1.3.1.xcframework.zip",
-      checksum: "438b08a757b8fb3c1cf9c04e0f74085d9d5c0b8e9c7806971e2f6a594c6adf8d"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/GlobalLangKit-1.3.2.xcframework.zip",
+      checksum: "686f2d77375b745206ef5303cca3bba9f8b51b8b32d42f83addccc1f9542365d"
     ),
     .binaryTarget(
-      name: "GlobalLangKitImp",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/GlobalLangKitImp-1.3.1.xcframework.zip",
-      checksum: "1d453752548be40f7cee6688064424ca635b9a4a21582794e53fa18cbc77875e"
+      name: "GlobalLangKitImpBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/GlobalLangKitImp-1.3.2.xcframework.zip",
+      checksum: "81b89a06c5a02eec0ba95dd53949364e78d422f044335aea67db120c3220eb88"
+    ),
+    .target(
+      name: "GlobalLangKitImpWrapper",
+      dependencies: [
+        "GlobalLangKitImpBinary",
+        "GlobalLangKit",
+      ]
     ),
     .binaryTarget(
-      name: "GlobalLangKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/GlobalLangKitMock-1.3.1.xcframework.zip",
-      checksum: "4b454bbbbe3eaffa31b904ab37e5bfd7ad090003f6ee0bd4c8c6880a8a6061e8"
+      name: "GlobalLangKitMockBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/GlobalLangKitMock-1.3.2.xcframework.zip",
+      checksum: "e6aaf6583896bd5b938bddf5ca26c51bd771ec814869529f79a9b21f9231bd5c"
+    ),
+    .target(
+      name: "GlobalLangKitMockWrapper",
+      dependencies: [
+        "GlobalLangKitMockBinary",
+        "GlobalLangKit",
+      ]
     ),
     .binaryTarget(
       name: "GuanceBridgeServiceKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/GuanceBridgeServiceKit-1.3.1.xcframework.zip",
-      checksum: "3133ab9e6d0204cb01d6ea2f376172cf30390a24080cd478955f6a0177b7600a"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/GuanceBridgeServiceKit-1.3.2.xcframework.zip",
+      checksum: "f4c4469f7cac73d8d62e38a926c96c1a6093d9bdc60b26d5e5c7091567a6a6f9"
     ),
     .binaryTarget(
       name: "GuanceBridgeServiceKitImpBinary",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/GuanceBridgeServiceKitImp-1.3.1.xcframework.zip",
-      checksum: "81d77a824567aa8dac7edee6d9c773a525d9aa3992c629b5a05f0f0f4d260e57"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/GuanceBridgeServiceKitImp-1.3.2.xcframework.zip",
+      checksum: "c9afed1280983c8f656c0be2a8eaa05e20f6b9fc81ebf89840bdfb47de77e274"
     ),
     .target(
       name: "GuanceBridgeServiceKitImpWrapper",
       dependencies: [
         "GuanceBridgeServiceKitImpBinary",
         .product(name: "FTMobileSDK", package: "datakit-ios"),
+        "GuanceBridgeServiceKit",
       ]
     ),
     .binaryTarget(
-      name: "GuanceBridgeServiceKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/GuanceBridgeServiceKitMock-1.3.1.xcframework.zip",
-      checksum: "74fdc0dc32f89d50fbc3d57d0e9564a786b54e63befbeee305d55940a729e4b6"
+      name: "GuanceBridgeServiceKitMockBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/GuanceBridgeServiceKitMock-1.3.2.xcframework.zip",
+      checksum: "6be69c93e6069e70268002766dc81eddec871145b666c9761a1c4a0286e96456"
+    ),
+    .target(
+      name: "GuanceBridgeServiceKitMockWrapper",
+      dependencies: [
+        "GuanceBridgeServiceKitMockBinary",
+        "GuanceBridgeServiceKit",
+      ]
     ),
     .binaryTarget(
       name: "InAppMessagingKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/InAppMessagingKit-1.3.1.xcframework.zip",
-      checksum: "3eea85e7cea863a8e2ba3136c9ccae5d1a35b33b47b63c579a26bf7876730bac"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/InAppMessagingKit-1.3.2.xcframework.zip",
+      checksum: "2b8f9c3fec65608a81d5e97a6468ae00c3ae88abaea054eebd271faa87aee279"
     ),
     .binaryTarget(
       name: "InAppMessagingKitImpBinary",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/InAppMessagingKitImp-1.3.1.xcframework.zip",
-      checksum: "f6f5c4c26823eb639ae27c073ae3093c2093badea4bcae7fb79df1b3d85aec5f"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/InAppMessagingKitImp-1.3.2.xcframework.zip",
+      checksum: "2ad18d4b9841778d19a80434ee291687434c63c979c3529e806a8c036712df74"
     ),
     .target(
       name: "InAppMessagingKitImpWrapper",
       dependencies: [
         "InAppMessagingKitImpBinary",
         .product(name: "PubNubSDK", package: "swift"),
+        "InAppMessagingKit",
+        "CommonSharedKit",
+        "PersistentStoreKit",
       ]
     ),
     .binaryTarget(
-      name: "InAppMessagingKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/InAppMessagingKitMock-1.3.1.xcframework.zip",
-      checksum: "c56519b15930511e1d371d10324823998957cb68a7f1f856325d87d5666610e0"
+      name: "InAppMessagingKitMockBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/InAppMessagingKitMock-1.3.2.xcframework.zip",
+      checksum: "015fa504c3404c105dfb6659a347335a29d77dd6dde010bb03e442b459a88de2"
+    ),
+    .target(
+      name: "InAppMessagingKitMockWrapper",
+      dependencies: [
+        "InAppMessagingKitMockBinary",
+        "InAppMessagingKit",
+      ]
     ),
     .binaryTarget(
       name: "JourneyTrackerKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/JourneyTrackerKit-1.3.1.xcframework.zip",
-      checksum: "25d3c8c367d0c171d7fa67e64c279f0e82d267c003b8bbef28c79315692a6c42"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/JourneyTrackerKit-1.3.2.xcframework.zip",
+      checksum: "1b806fc1f10db1c8c74afa4a0b217159deb784137c0bef2eda810b201096906c"
     ),
     .binaryTarget(
       name: "JourneyTrackerKitImpBinary",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/JourneyTrackerKitImp-1.3.1.xcframework.zip",
-      checksum: "6fdeff88aa7d774d17a80cc4dd9d295491be284d931e56061abb1f40b5c04e2e"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/JourneyTrackerKitImp-1.3.2.xcframework.zip",
+      checksum: "b4e90c4148677c9720a1dbe4b7d2fc508ef0cc76c427bc17ff9ecb052c7df313"
     ),
     .target(
       name: "JourneyTrackerKitImpWrapper",
       dependencies: [
         "JourneyTrackerKitImpBinary",
         .product(name: "GoogleRidesharingConsumer", package: "ios-consumer-sdk"),
+        "JourneyTrackerKit",
+        "CommonSharedKit",
       ]
     ),
     .binaryTarget(
-      name: "JourneyTrackerKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/JourneyTrackerKitMock-1.3.1.xcframework.zip",
-      checksum: "46fa6f50e465b3e08fa7eefb8d317e944f440326078f7d8c085387e35ec6ebc5"
+      name: "JourneyTrackerKitMockBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/JourneyTrackerKitMock-1.3.2.xcframework.zip",
+      checksum: "2a5fa8a2e5ed6550d7afa6ff21bf1dc9830a7ed7fffffdf6e98069e8f5eb482b"
+    ),
+    .target(
+      name: "JourneyTrackerKitMockWrapper",
+      dependencies: [
+        "JourneyTrackerKitMockBinary",
+        "JourneyTrackerKit",
+      ]
     ),
     .binaryTarget(
       name: "LogTrackKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/LogTrackKit-1.3.1.xcframework.zip",
-      checksum: "9e0c270bba74ccd1033fce16082a3e294fa138264b77160818538eaf68958771"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/LogTrackKit-1.3.2.xcframework.zip",
+      checksum: "85ed95836c828d23ef9183113a517d7a78999ac700cde00d4946b1c87746bad0"
     ),
     .binaryTarget(
-      name: "LogTrackKitImp",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/LogTrackKitImp-1.3.1.xcframework.zip",
-      checksum: "d668fe6e794cae153ab021eb00399c248dbc318bfa11d647e74135928b482887"
+      name: "LogTrackKitImpBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/LogTrackKitImp-1.3.2.xcframework.zip",
+      checksum: "49e1296e8791d493dfc34c09bc7ef3c616eff3982dcc2498cd5fa1a60d51c883"
+    ),
+    .target(
+      name: "LogTrackKitImpWrapper",
+      dependencies: [
+        "LogTrackKitImpBinary",
+        "LogTrackKit",
+      ]
     ),
     .binaryTarget(
-      name: "LogTrackKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/LogTrackKitMock-1.3.1.xcframework.zip",
-      checksum: "2f3375c78b8d4fcf0f6261417bbbdf25f479eee3610992f0907c8ca632b8495b"
+      name: "LogTrackKitMockBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/LogTrackKitMock-1.3.2.xcframework.zip",
+      checksum: "7fc90ba99c296348fe7f02411ab2f4a6a9dc98ba3d83c734084db8b27845ab0f"
+    ),
+    .target(
+      name: "LogTrackKitMockWrapper",
+      dependencies: [
+        "LogTrackKitMockBinary",
+        "LogTrackKit",
+      ]
     ),
     .binaryTarget(
       name: "PersistentStoreKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/PersistentStoreKit-1.3.1.xcframework.zip",
-      checksum: "3d2856a2d019f40579b73588f95ce40cf5746789ca692d499300a71ac88b5c3b"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/PersistentStoreKit-1.3.2.xcframework.zip",
+      checksum: "af73bca6da9d9569e29c59454f73dc281373f860994e7f54305d91c70acc027c"
     ),
     .binaryTarget(
       name: "PersistentStoreKitImpBinary",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/PersistentStoreKitImp-1.3.1.xcframework.zip",
-      checksum: "875c993bed820a2da49871ac130134b47fac489347e6011b19ba8147086ecc0a"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/PersistentStoreKitImp-1.3.2.xcframework.zip",
+      checksum: "e1a84e6862ce78eda55ff86e43ad529f4874103392a4c36bb9fb364812163d05"
     ),
     .target(
       name: "PersistentStoreKitImpWrapper",
       dependencies: [
         "PersistentStoreKitImpBinary",
         .product(name: "RealmSwift", package: "realm-swift"),
+        "PersistentStoreKit",
+        "CommonSharedKit",
       ]
     ),
     .binaryTarget(
-      name: "PersistentStoreKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/PersistentStoreKitMock-1.3.1.xcframework.zip",
-      checksum: "e44c9418d6a97e6a72e7b05517d26f351135956342615b0ddd77a8dfb7ec2d80"
+      name: "PersistentStoreKitMockBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/PersistentStoreKitMock-1.3.2.xcframework.zip",
+      checksum: "6b955430105087fad2962588a846d2fa4be45ccc3f83c763508bab922811ee6d"
+    ),
+    .target(
+      name: "PersistentStoreKitMockWrapper",
+      dependencies: [
+        "PersistentStoreKitMockBinary",
+        "PersistentStoreKit",
+      ]
     ),
     .binaryTarget(
       name: "SecureKeychainKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/SecureKeychainKit-1.3.1.xcframework.zip",
-      checksum: "7add299116f5305c0ab1df750428f4b67d0ec1afe7837e56d6e783f8048b3829"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/SecureKeychainKit-1.3.2.xcframework.zip",
+      checksum: "2162b26ea08fff88a1cd1f9103b3d3f8b48c0e32bd561aceb8260b664145b3db"
     ),
     .binaryTarget(
-      name: "SecureKeychainKitImp",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/SecureKeychainKitImp-1.3.1.xcframework.zip",
-      checksum: "0eb3cc17e3d2ad4e61279e4a64104b2286392b7d4ca78b2bb00a51fddb59dfb4"
+      name: "SecureKeychainKitImpBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/SecureKeychainKitImp-1.3.2.xcframework.zip",
+      checksum: "b5075fc0216ea3d0e4798fd6e62e390b27f77ade42be3bc15cb14b44603e007d"
+    ),
+    .target(
+      name: "SecureKeychainKitImpWrapper",
+      dependencies: [
+        "SecureKeychainKitImpBinary",
+        "SecureKeychainKit",
+        "CommonSharedKit",
+      ]
     ),
     .binaryTarget(
-      name: "SecureKeychainKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/SecureKeychainKitMock-1.3.1.xcframework.zip",
-      checksum: "f0c83afdb45f78e7895952ec713c58124c250fee62efabce3f93b3542de39d7f"
+      name: "SecureKeychainKitMockBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/SecureKeychainKitMock-1.3.2.xcframework.zip",
+      checksum: "aa3ecbb8f31bb2bbf7fa587bf830ec0a02a0497c8c32a7182a75db3af56867d1"
+    ),
+    .target(
+      name: "SecureKeychainKitMockWrapper",
+      dependencies: [
+        "SecureKeychainKitMockBinary",
+        "SecureKeychainKit",
+      ]
     ),
     .binaryTarget(
       name: "StreamLogDataKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/StreamLogDataKit-1.3.1.xcframework.zip",
-      checksum: "9b921f0f68f024d877aaf410e0ee060629071e339bc9b215e417cb40f082aa7f"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/StreamLogDataKit-1.3.2.xcframework.zip",
+      checksum: "2f8757bfd71d960a5808b1f5f315ba015b35665d149585dfecc85fb9157a5d59"
     ),
     .binaryTarget(
       name: "StreamLogDataKitImpBinary",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/StreamLogDataKitImp-1.3.1.xcframework.zip",
-      checksum: "280efe461060532c8d6edd637b4dee37bbdfced8cc6c3b0c866e04526f85d37d"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/StreamLogDataKitImp-1.3.2.xcframework.zip",
+      checksum: "2359a36c2ae743bd2d6a61284a6989d1b83355725dc10c698fbd957d5e0467aa"
     ),
     .target(
       name: "StreamLogDataKitImpWrapper",
       dependencies: [
         "StreamLogDataKitImpBinary",
         .product(name: "RealmSwift", package: "realm-swift"),
+        "StreamLogDataKit",
       ]
     ),
     .binaryTarget(
-      name: "StreamLogDataKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/StreamLogDataKitMock-1.3.1.xcframework.zip",
-      checksum: "3b0df2f3163d6b8d991160f004be47726fc025ac7394903cca04ee3189bc7f9c"
+      name: "StreamLogDataKitMockBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/StreamLogDataKitMock-1.3.2.xcframework.zip",
+      checksum: "7122e0cda8fc05f339afdcd056f2bddffe3c0eba79d73f638189749a649a6431"
+    ),
+    .target(
+      name: "StreamLogDataKitMockWrapper",
+      dependencies: [
+        "StreamLogDataKitMockBinary",
+        "StreamLogDataKit",
+      ]
     ),
     .binaryTarget(
       name: "TestDetectLeakKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/TestDetectLeakKit-1.3.1.xcframework.zip",
-      checksum: "396a4a8e399b732e4da89861c12d5e0fcfbd20c90f73ad4fec2409e132168da3"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/TestDetectLeakKit-1.3.2.xcframework.zip",
+      checksum: "c0b3c808601144ee993573702f4fe9eb3121dedc96d3a32dfc19a33b64dadca3"
     ),
     .binaryTarget(
       name: "TripPathMapKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/TripPathMapKit-1.3.1.xcframework.zip",
-      checksum: "5ea642828eb0084d19f87bcc936c9debd5284106e8279c0fe4c1e757d05302db"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/TripPathMapKit-1.3.2.xcframework.zip",
+      checksum: "3c68f3c9ffe2236539289e09072c0764bc00c5ae1a4895b4da0885a01ba9a1c3"
     ),
     .binaryTarget(
       name: "TripPathMapKitImpBinary",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/TripPathMapKitImp-1.3.1.xcframework.zip",
-      checksum: "7d834c3af1cced0d40c2320d6ae896c2b9c60a8f555f2b8ae187070edf353e00"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/TripPathMapKitImp-1.3.2.xcframework.zip",
+      checksum: "4c92b588f55a3ea77156fd486daedc3e809d24f896e7a3ee753277a1802433fc"
     ),
     .target(
       name: "TripPathMapKitImpWrapper",
       dependencies: [
         "TripPathMapKitImpBinary",
         .product(name: "GoogleMaps", package: "ios-maps-sdk"),
+        "TripPathMapKit",
       ]
     ),
     .binaryTarget(
-      name: "TripPathMapKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/TripPathMapKitMock-1.3.1.xcframework.zip",
-      checksum: "8c24e4ec71f07d3c75fa1c8a5858d91f9b3ca1bfb4afe04f07776a6db54bdad6"
-    ),
-    .binaryTarget(
       name: "UnifiedPrivacyKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/UnifiedPrivacyKit-1.3.1.xcframework.zip",
-      checksum: "fe6e860ebbe4e47c874f7b1fc4d2cf159bedd29b01d6f3a74650ab58b3a262bf"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/UnifiedPrivacyKit-1.3.2.xcframework.zip",
+      checksum: "5fa3a193f083f214d0f3dab54a6237fe024d835ff6d9957b01626ac1f611c645"
     ),
     .binaryTarget(
-      name: "UnifiedPrivacyKitImp",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/UnifiedPrivacyKitImp-1.3.1.xcframework.zip",
-      checksum: "5938b2ddd0f4bf041cf5347af0f23aab87331f8c8f3b439b24aeecbb934d4460"
+      name: "UnifiedPrivacyKitImpBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/UnifiedPrivacyKitImp-1.3.2.xcframework.zip",
+      checksum: "51ffdf548b73d476dcc91bcbac9358d294a9a3b1778623c530e7d294290370a8"
+    ),
+    .target(
+      name: "UnifiedPrivacyKitImpWrapper",
+      dependencies: [
+        "UnifiedPrivacyKitImpBinary",
+        "UnifiedPrivacyKit",
+      ]
     ),
     .binaryTarget(
-      name: "UnifiedPrivacyKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/UnifiedPrivacyKitMock-1.3.1.xcframework.zip",
-      checksum: "92f2b6ae87158de23d7c138b90b6b03e330331ae60fd0780b98d994ad7517006"
+      name: "UnifiedPrivacyKitMockBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/UnifiedPrivacyKitMock-1.3.2.xcframework.zip",
+      checksum: "6d97e7ee17735a9fd98b1f1ae4a949c50553b389b357d83f663eda96d18af88b"
+    ),
+    .target(
+      name: "UnifiedPrivacyKitMockWrapper",
+      dependencies: [
+        "UnifiedPrivacyKitMockBinary",
+        "UnifiedPrivacyKit",
+      ]
     ),
     .binaryTarget(
-      name: "ZigNetworkEyeKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/ZigNetworkEyeKit-1.3.1.xcframework.zip",
-      checksum: "7dfe98a89e47f0e400c6457dfe7c456366ebea4d48207047de3b0639aaef5ee4"
+      name: "ZigNetworkEyeKitBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/ZigNetworkEyeKit-1.3.2.xcframework.zip",
+      checksum: "4d3d9c540191a6f3b50ba3a07fd0515953b657a98ac51e54127a7a7538f7684a"
+    ),
+    .target(
+      name: "ZigNetworkEyeKitWrapper",
+      dependencies: [
+        "ZigNetworkEyeKitBinary",
+        "ComfortUIKit",
+        "ZigNetworkKitImpBinary",
+      ]
     ),
     .binaryTarget(
       name: "ZigNetworkKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/ZigNetworkKit-1.3.1.xcframework.zip",
-      checksum: "f1b2b9108728ff8cac1717140da1c6dd50deb4efa36ee28e2ed5e8c8d83321ff"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/ZigNetworkKit-1.3.2.xcframework.zip",
+      checksum: "b0092099cdec696d014215fff6e55bb2476e2f1fcbb147c1a677f97215549e35"
     ),
     .binaryTarget(
-      name: "ZigNetworkKitImp",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/ZigNetworkKitImp-1.3.1.xcframework.zip",
-      checksum: "b13798ceadb7d411720e7fa25eb53ef9f514b5f516694caff95a1645560abcf7"
+      name: "ZigNetworkKitImpBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/ZigNetworkKitImp-1.3.2.xcframework.zip",
+      checksum: "bd702f8de7ec7033bcc2b69ab2eb92f6d6d1c9bdce47bf29076160f8977e267a"
+    ),
+    .target(
+      name: "ZigNetworkKitImpWrapper",
+      dependencies: [
+        "ZigNetworkKitImpBinary",
+        "ZigNetworkKit",
+      ]
     ),
     .binaryTarget(
-      name: "ZigNetworkKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/ZigNetworkKitMock-1.3.1.xcframework.zip",
-      checksum: "cd8631740b7dfcbc64a08cddd3d9b3b9009f940eebb427b709e55dae19dec3f9"
+      name: "ZigNetworkKitMockBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/ZigNetworkKitMock-1.3.2.xcframework.zip",
+      checksum: "be6c7ea73cf65398ce84a252844097eb10b2ebd13b5bef84df797523ffd2dca5"
+    ),
+    .target(
+      name: "ZigNetworkKitMockWrapper",
+      dependencies: [
+        "ZigNetworkKitMockBinary",
+        "ZigNetworkKit",
+      ]
     ),
     .binaryTarget(
       name: "ApplePayEngineKit",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/ApplePayEngineKit-1.3.1.xcframework.zip",
-      checksum: "547b99bdb3cf275b928142d99cb8073ddc7303ef6f00c1f1b0fa8639b25baee7"
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/ApplePayEngineKit-1.3.2.xcframework.zip",
+      checksum: "4311175d19c62c1c81f7f4640cae39e73975422127ea91a3d4ab1127a4acf096"
     ),
     .binaryTarget(
-      name: "ApplePayEngineKitImp",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/ApplePayEngineKitImp-1.3.1.xcframework.zip",
-      checksum: "02a6b26623398d9c412b0c0631eda64b437219db96bcd0fd3119a88d94f1c3e9"
+      name: "ApplePayEngineKitImpBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/ApplePayEngineKitImp-1.3.2.xcframework.zip",
+      checksum: "24d88d63e428787d6d335433e5ef1a75997bb74c311fe1a354e82b0e5dbb40b3"
+    ),
+    .target(
+      name: "ApplePayEngineKitImpWrapper",
+      dependencies: [
+        "ApplePayEngineKitImpBinary",
+        "ApplePayEngineKit",
+      ]
     ),
     .binaryTarget(
-      name: "ApplePayEngineKitMock",
-      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.1/Releases/1.3.1/ApplePayEngineKitMock-1.3.1.xcframework.zip",
-      checksum: "5107b10fcd54f9d457e1aaab719254defc8952dd0e88d45c1b4cd24ee3544937"
+      name: "ApplePayEngineKitMockBinary",
+      url: "https://raw.githubusercontent.com/harryngict/iosmodularkits-xcframework/refs/tags/v1.3.2/Releases/1.3.2/ApplePayEngineKitMock-1.3.2.xcframework.zip",
+      checksum: "9ebe126a46823c0d69c7b7889c258fbea1302c44f7f825e2c402e6c5ed642400"
+    ),
+    .target(
+      name: "ApplePayEngineKitMockWrapper",
+      dependencies: [
+        "ApplePayEngineKitMockBinary",
+        "ApplePayEngineKit",
+      ]
     )
   ]
 )

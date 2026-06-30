@@ -1,1 +1,1 @@
-// Auto-generated stub — GuanceBridgeServiceKitImpWrapper re-exports GuanceBridgeServiceKitImpBinary + external dependencies
+// Auto-generated stub — GuanceBridgeServiceKitImpWrapper re-exports GuanceBridgeServiceKitImpBinary + all dependencies
